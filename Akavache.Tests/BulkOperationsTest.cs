@@ -273,11 +273,11 @@ namespace Akavache.Tests
         }
     }
 
-    public class TestBlobCacheBulkOperationsTests : BulkOperationsTests
+    public class InMemoryBlobCacheBulkOperationsTests : BulkOperationsTests
     {
         protected override IBlobCache CreateBlobCache(string path)
         {
-            return new BlockingDisposeBulkCache(new TestBlobCache(RxApp.TaskpoolScheduler));
+            return new BlockingDisposeBulkCache(new InMemoryBlobCache(RxApp.TaskpoolScheduler));
         }
     }
 
@@ -313,11 +313,11 @@ namespace Akavache.Tests
         }
     }
 
-    public class TestBlobCacheObjectBulkOperationsTests : ObjectBulkOperationsTests
+    public class InMemoryBlobCacheObjectBulkOperationsTests : ObjectBulkOperationsTests
     {
         protected override IBlobCache CreateBlobCache(string path)
         {
-            return new BlockingDisposeBulkCache(new TestBlobCache(RxApp.TaskpoolScheduler));
+            return new BlockingDisposeBulkCache(new InMemoryBlobCache(RxApp.TaskpoolScheduler));
         }
     }
 
