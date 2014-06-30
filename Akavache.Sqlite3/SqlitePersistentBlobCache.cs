@@ -156,7 +156,7 @@ namespace Akavache.Sqlite3
                 });
         }
 
-        public IObservable<List<string>> GetAllKeys()
+        public IObservable<IEnumerable<string>> GetAllKeys()
         {
             if (disposed) throw new ObjectDisposedException("SqlitePersistentBlobCache");
 
